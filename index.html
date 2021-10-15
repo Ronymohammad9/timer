@@ -6,13 +6,27 @@
 <div id="basicUsage">00:00:00</div>
 <script>
 var timer = new Timer();
-  timer.start();
+  
   timer.addEventListener('secondsUpdated', function(e) {
       $('#basicUsage').html(timer.getTimeValues().toString());
   });
+ function starttimer(){
+    timer.start();
+ }
+
+ function stoptimer(){
+timer.pause();
+ }
+
+function resettimer(){
+
+    timer.stop();timer.pause();
+    timer.start();
+    
+}
 </script>
-    <button onclick="timer()" id="button-start">Start</button>
-    <button id="button-stop">Stop</button>
-    <button id="button-reset">Reset</button>
+    <button onclick="starttimer()" id="button-start">Start</button>
+    <button onclick="stoptimer()" id="button-stop">Pause</button>
+    <button onclick="resettimer()" id="button-reset">Reset</button>
     </div> 
      
